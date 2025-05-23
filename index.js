@@ -1,15 +1,27 @@
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeToggleBtn.querySelector('i');
+
+const moonIconClass = 'fa-regular fa-moon';
+const sunIconClass = 'fa-solid fa-sun';
+
+
 if (localStorage.getItem('darkMode') === 'enabled') {
   body.classList.add('dark-mode');
-  icon.classList.replace('fa-moon', 'fa-sun');
+  icon.className = sunIconClass;
+} else {
+  icon.className = moonIconClass;
 }
 
-toggleBtn.addEventListener('click', () => {
+
+themeToggleBtn.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
+
   if (body.classList.contains('dark-mode')) {
-    icon.classList.replace('fa-moon', 'fa-sun');
+    icon.className = sunIconClass;
     localStorage.setItem('darkMode', 'enabled');
   } else {
-    icon.classList.replace('fa-sun', 'fa-moon');
+    icon.className = moonIconClass;
     localStorage.setItem('darkMode', 'disabled');
   }
 });
