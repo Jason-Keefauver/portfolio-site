@@ -25,3 +25,5 @@ themeToggleBtn.addEventListener('click', () => {
     localStorage.setItem('darkMode', 'disabled');
   }
 });
+
+document.getElementById('year').textContent = new Date().getFullYear();
